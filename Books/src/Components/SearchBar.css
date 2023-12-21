@@ -1,0 +1,14 @@
+.search-container{
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+label{
+    font-size: large;
+}
+input{
+    margin-left: 10px;
+    height: 30px;
+    width: 230px;
+}

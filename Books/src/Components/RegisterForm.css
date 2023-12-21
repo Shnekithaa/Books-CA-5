@@ -1,0 +1,35 @@
+.form-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-image: url("https://img.freepik.com/free-vector/white-elegant-texture-background_23-2148428851.jpg?w=996&t=st=1703152630~exp=1703153230~hmac=1450490135508f8b92e61879e2e4f99cbf4ce91f9cd239a22bf30538349dca9a");
+    width: 100vw;
+    max-width: 1500px;
+    height: 100vh;
+    background-size: cover;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: bisque;
+    height: 400px;
+    width: 500px;
+    padding: 20px;
+    border-radius: 20px;
+    border: 2px solid royalblue;
+}
+h2{
+    margin-bottom: 10px;
+}
+.error-message{
+    color: red;
+    margin-top: 10px;
+}
+.name{
+    display: grid;
+    grid-template-columns: 3fr 3fr;
+}

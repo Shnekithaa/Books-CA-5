@@ -1,0 +1,25 @@
+.fetch-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 35px 0;
+    background-image: url("https://img.freepik.com/free-vector/white-elegant-texture-background_23-2148428851.jpg?w=996&t=st=1703152630~exp=1703153230~hmac=1450490135508f8b92e61879e2e4f99cbf4ce91f9cd239a22bf30538349dca9a");
+}
+button{
+    height: 30px;
+    width: 120px;
+    border-radius: 10px;
+    border-width: 0;
+    background-color: beige;
+    border: 1px solid brown;
+    align-self: flex-end;
+    margin-top: -50px;
+    margin-right: 10px;
+}
+button:hover{
+    cursor: pointer;
+}
+p{
+    margin-top: 10px;
+}
