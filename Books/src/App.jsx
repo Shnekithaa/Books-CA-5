@@ -19,7 +19,7 @@ const App = () => {
           { headers: { 'Authorization': 'whatever-you-want' } }
         );
         const data = await response.json();
-        console.log(data.books)
+        console.log(data.books);
         setBooks(data.books);
       } catch (error) {
         console.error('Error fetching books:', error);
@@ -29,12 +29,34 @@ const App = () => {
     fetchBooks();
   }, []);
 
-  const handleSearch = (term) => {
+  const handleSearch = async (term) => {
     setSearchTerm(term);
-    const filtered = books.filter((book) =>
-      book.title.toLowerCase().includes(term.toLowerCase())
-    );
-    setFilteredBooks(filtered);
+    try {
+      const url = 'https://reactnd-books-api.udacity.com/search';
+      const token = 'whatever-you-want'; 
+
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': token,
+        },
+        body: JSON.stringify({
+          query: term,
+          maxResults: 1, 
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      const data = await response.json();
+      console.log('Search results:', data);
+      setFilteredBooks(data.books);
+    } catch (error) {
+      console.error('Error during search:', error.message);
+    }
   };
 
   const handleRegisterClick = () => {
@@ -61,7 +83,7 @@ const App = () => {
               <ul>
                 {filteredBooks.map((book) => (
                   <li key={book.id}>
-                    <img src={book.imageLinks.thumbnail} />
+                    <img src={book.imageLinks.thumbnail} alt={book.title} />
                     <strong>{book.title}</strong>
                     <p>Free</p>
                   </li>

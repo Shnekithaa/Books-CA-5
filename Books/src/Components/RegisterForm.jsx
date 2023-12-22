@@ -23,7 +23,6 @@ const RegisterForm = ({ onRegister }) => {
       [name]: value,
     });
 
-    // Clear the error message when the user starts typing in the field
     setFormErrors({
       ...formErrors,
       [name]: '',
@@ -38,15 +37,13 @@ const RegisterForm = ({ onRegister }) => {
       // Display error messages
       setFormErrors(validationErrors);
     } else {
-      // Save the data or perform other actions
+      // Save the data 
       onRegister(formData);
       alert('Registration Successful');
     }
   };
 
   const validateForm = () => {
-    // Implement your form validation logic
-    // Set error messages for invalid fields
     const errors = {};
 
     if (formData.name.length < 3 || formData.name.length > 30) {
@@ -65,7 +62,6 @@ const RegisterForm = ({ onRegister }) => {
       errors.repeatPassword = 'Passwords do not match';
     }
 
-    // Return errors object, or null if the form is valid
     return Object.keys(errors).length > 0 ? errors : null;
   };
 

@@ -11,7 +11,7 @@ const SearchBar = ({ books = [], onSearch }) => {
   };
 
   const filterBooks = () => {
-    // Filter books based on the searchTerm
+
     return books.filter(book =>
       book.title.toLowerCase().includes(searchTerm.toLowerCase())
     );
