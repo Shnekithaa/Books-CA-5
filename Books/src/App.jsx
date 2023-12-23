@@ -43,7 +43,7 @@ const App = () => {
         },
         body: JSON.stringify({
           query: term,
-          maxResults: 1, 
+          maxResults: 10, 
         }),
       });
 

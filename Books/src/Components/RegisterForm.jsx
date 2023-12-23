@@ -31,13 +31,10 @@ const RegisterForm = ({ onRegister }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Validate and handle form submission
     const validationErrors = validateForm();
     if (validationErrors) {
-      // Display error messages
       setFormErrors(validationErrors);
     } else {
-      // Save the data 
       onRegister(formData);
       alert('Registration Successful');
     }

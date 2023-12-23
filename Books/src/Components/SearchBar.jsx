@@ -10,12 +10,6 @@ const SearchBar = ({ books = [], onSearch }) => {
     onSearch(value);
   };
 
-  const filterBooks = () => {
-
-    return books.filter(book =>
-      book.title.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-  };
 
   return (
     <div className='search-container'>
@@ -26,14 +20,6 @@ const SearchBar = ({ books = [], onSearch }) => {
         onChange={handleChange}
         placeholder="Enter book title..."
       />
-      {/* <h2>Search Results</h2>
-      <ul>
-        {filterBooks().map((book) => (
-          <li key={book.id}>
-            <strong>{book.title}</strong> by {book.author}
-          </li>
-        ))}
-      </ul> */}
     </div>
   );
 };
